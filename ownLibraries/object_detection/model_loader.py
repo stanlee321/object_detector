@@ -32,7 +32,7 @@ class DNNModel():
             t1 = time.time()
             (boxes, scores, classes, num_detections) = self._dnn_model.predict(image_array)
             t2 = time.time()
-            print('Time of prediction', t2-t1)
+            print('Time of inference:', t2-t1)
             for i, b in enumerate(boxes[0]):
                 #        person  1       car    3                bus   6               truck   8
                 if classes[0][i] == 3 or classes[0][i] == 6 or classes[0][i] == 8:
